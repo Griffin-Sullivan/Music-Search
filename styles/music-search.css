@@ -1,3 +1,127 @@
+#search-body {
+        -webkit-animation: color-change 8s infinite;
+        -moz-animation: color-change 8s infinite;
+        -o-animation: color-change 8s infinite;
+        -ms-animation: color-change 8s infinite;
+        animation: color-change 8s infinite;
+    }
+
+  @-webkit-keyframes color-change {
+        0% { color: #E4FFC4; }
+        16% { color: #C4FFE2; }
+        33% { color: #C4CDFF; }
+        49% { color: #E8C4FF; }
+        65% { color: #FFC4C4; }
+        82% { color: #FFDFC4; }
+        100% { color: #E4FFC4; }
+    }
+    @-moz-keyframes color-change {
+      0% { color: #E4FFC4; }
+      16% { color: #C4FFE2; }
+      33% { color: #C4CDFF; }
+      49% { color: #E8C4FF; }
+      65% { color: #FFC4C4; }
+      82% { color: #FFDFC4; }
+      100% { color: #E4FFC4; }
+    }
+    @-ms-keyframes color-change {
+      0% { color: #E4FFC4; }
+      16% { color: #C4FFE2; }
+      33% { color: #C4CDFF; }
+      49% { color: #E8C4FF; }
+      65% { color: #FFC4C4; }
+      82% { color: #FFDFC4; }
+      100% { color: #E4FFC4; }
+    }
+    @-o-keyframes color-change {
+      0% { color: #E4FFC4; }
+      16% { color: #C4FFE2; }
+      33% { color: #C4CDFF; }
+      49% { color: #E8C4FF; }
+      65% { color: #FFC4C4; }
+      82% { color: #FFDFC4; }
+      100% { color: #E4FFC4; }
+    }
+    @keyframes color-change {
+      0% { color: #E4FFC4; }
+      16% { color: #C4FFE2; }
+      33% { color: #C4CDFF; }
+      49% { color: #E8C4FF; }
+      65% { color: #FFC4C4; }
+      82% { color: #FFDFC4; }
+      100% { color: #E4FFC4; }
+  }
+
+
 * {
-  
+  font-family: 'Comfortaa', cursive;
+  font-size: 18px;
+  background-color: #222222;
+  line-height: 33px;
+  text-align: center;
+}
+
+.grey-text {
+  color: #B1B1B1;
+}
+
+.tracks-color {
+  color: #E4FFC4;
+}
+
+.albums-color {
+  color: #C4FFE2;
+}
+
+.artists-color {
+  color: #C4CDFF;
+}
+.playlist-color {
+  color: #E8C4FF;
+}
+
+.podcast-color {
+  color: #FFC4C4;
+}
+
+.genre-color {
+  color: #FFDFC4;
+}
+
+
+#main-search {
+  margin-top: 20%;
+}
+
+#about-us-title {
+  font-size: 14px;
+  position: absolute;
+  top: 125%;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#about-us {
+  font-size: 12px;
+  position: absolute;
+  top: 150%;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#down-arrow-button {
+  border: none;
+  position: absolute;
+  top: 90%;
+  color: #9F9F9F;
+}
+
+#box {
+  border: none;
+  background-color: #9F9F9F;
+  border-radius: 20px;
+  width: 45%;
+  color: #222222;
 }
