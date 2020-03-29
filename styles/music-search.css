@@ -126,3 +126,82 @@
   width: 45%;
   color: #222222;
 }
+
+/* --------------- Beginning of Navigation bar CSS --------------- */
+
+nav {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  background-color: black;
+  height: 80px;
+}
+
+#nav-items {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  
+}
+
+#nav-items , a {
+  margin-left: 30px;
+  margin-right: 30px;
+  background-color: black;
+  text-decoration: none;
+  color: #B1B1B1;
+  font-size: 20px;
+}
+
+#nav-items,a:nth-child(1):hover {
+  color: #E4FFC4;
+}
+
+#nav-items,a:nth-child(2):hover {
+  color: #C4FFE2;
+}
+
+#nav-items,a:nth-child(3):hover {
+  color: #C4CDFF;
+}
+
+#nav-items,a:nth-child(4):hover {
+  color: #E8C4FF;
+}
+
+#nav-items,a:nth-child(5):hover {
+  color: #FFC4C4;
+}
+
+#nav-items,a:nth-child(6):hover {
+  color: #FFDFC4;
+  padding-right: 2.5%;
+}
+
+#nav-items,a:nth-child(6) {
+  padding-right: 2.5%;
+}
+
+#search-bar {
+  background-color: black;
+}
+
+#logo-home {
+  font-size: 12px;
+  color: #B1B1B1;
+}
+
+#search-box {
+  border-radius: 20px;
+  background-color: lightgray;
+}
+
+/* ------------ End of Navigation bar CSS ------------- */
+
+body {
+  margin: 0;
+}
