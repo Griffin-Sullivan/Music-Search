@@ -3,26 +3,224 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/music-search.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300&display=swap" rel="stylesheet">
     <title></title>
   </head>
   <body>
-    <nav>
-      <div id="search-bar">
-        <a href="../index.html" id="logo-home">Search Icon</a>
-        <input id="search-box">
+    <header>
+      <div class="header-flex-item" id="flex-item-1">
+        <div id="search-bar">
+          <a href="../index.html" id="logo-home"><img src="https://img.icons8.com/windows/25/000000/search.png"/></a>
+          <input id="search-box" placeholder="search">
       </div>
-      <div id="nav-items">
-        <a href="tracks.html">tracks</a>
-        <a href="albums.html">albums</a>
-        <a href="genres.html">genres</a>
-        <a href="artists.html">artists</a>
-        <a href="podcasts.html">podcasts</a>
-        <a href="playlists.html">playlists</a>
       </div>
-    </nav>
-
-    <p>artists</p>
+      <div class="header-flex-item" id="flex-item-2">
+        <nav>
+          <div id="nav-items">
+            <a href="tracks.html">tracks</a>
+            <a href="albums.html">albums</a>
+            <a href="genres.html">genres</a>
+            <a href="artists.html" class="active">artists</a>
+            <a href="podcasts.html">podcasts</a>
+            <a href="playlists.html">playlists</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main class="artists-page">
+    <div class="track-info">
+      <table>
+        <tr>
+          <td>
+            <img src="../images/placeholder.jpg" class="main-album-img">
+          </td>
+          <td>
+            <ul>
+              <li><h2 class="artists-color">artist name</h2></li>
+              <li><h3 class="artist-lable">artist location</li>
+              <li><h4 id="release-year">year formed</h3></li>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="recent-searches-title">
+      <h1 class="albums-color">Recent Searches</h1>
+    </div>
+    <div class="recent-searches">
+      <div class="recent-searches-result" id="ecent-searches-result-1">
+        <table>
+          <tr>
+            <td>
+              <img src="../images/placeholder.jpg" class="recent-searches-img">
+            </td>
+            <td>
+              <ul>
+                <li><h2 class="albums-color">album name</h2></li>
+                <li><h3 class="artist-lable">album artist</li>
+                <li><h4>year</h3></li>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="recent-searches-result" id="ecent-searches-result-2">
+        <table>
+          <tr>
+            <td>
+              <img src="../images/placeholder.jpg" class="recent-searches-img">
+            </td>
+            <td>
+              <ul>
+                <li><h2 class="albums-color">album name</h2></li>
+                <li><h3 class="artist-lable">album artist</li>
+                <li><h4>year</h3></li>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="recent-searches-result" id="ecent-searches-result-3">
+        <table>
+          <tr>
+            <td>
+              <img src="../images/placeholder.jpg" class="recent-searches-img">
+            </td>
+            <td>
+              <ul>
+                <li><h2 class="albums-color">album name</h2></li>
+                <li><h3 class="artist-lable">album artist</li>
+                <li><h4>year</h3></li>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="related-tracks-title">
+      <h1 class="artists-color">Related Artists</h1>
+    </div>
+    <div id="related-tracks-container">
+      <div class="related-tracks" id="related-artist-1">
+        <table>
+          <tr>
+            <td>
+              <img src="../images/placeholder.jpg" class="related-tracks-img">
+            </td>
+            <td>
+              <h2 class="artists-color" id="related-artist-name-1">Track name</h2>
+              <br>
+              <h3>artist</h3>
+            </td>
+          </tr>
+        </table>
+        <hr>
+      </div>
+      <div class="related-tracks" id="related-artist-2">
+        <table>
+          <tr>
+            <td>
+              <img src="../images/placeholder.jpg" class="related-tracks-img">
+            </td>
+            <td>
+              <h2 class="tracks-color" id="related-artist-name-2">Track name</h2>
+              <br>
+              <h3>artist</h3>
+            </td>
+          </tr>
+        </table>
+        <hr>
+      </div>
+      <div class="related-tracks" id="related-artist-3">
+        <table>
+          <tr>
+            <td>
+              <img src="../images/placeholder.jpg" class="related-tracks-img">
+            </td>
+            <td>
+              <h2 class="artists-color" id="related-artist-name-3">Track name</h2>
+              <br>
+              <h3>artist</h3>
+            </td>
+          </tr>
+        </table>
+        <hr>
+      </div>
+      <div class="related-tracks" id="related-artist-4">
+        <table>
+          <tr>
+            <td>
+              <img src="../images/placeholder.jpg" class="related-tracks-img">
+            </td>
+            <td>
+              <h2 class="tracks-color" id="related-artist-name-4">Track name</h2>
+              <br>
+              <h3>artist</h3>
+            </td>
+          </tr>
+        </table>
+        <hr>
+      </div>
+      <div class="related-tracks" id="related-artist-5">
+        <table>
+          <tr>
+            <td>
+              <img src="../images/placeholder.jpg" class="related-tracks-img">
+            </td>
+            <td>
+              <h2 class="artists-color" id="related-artist-name-5">Track name</h2>
+              <br>
+              <h3>artist</h3>
+            </td>
+          </tr>
+        </table>
+        <hr>
+      </div>
+      <div class="related-tracks" id="related-artist-6">
+        <table>
+          <tr>
+            <td>
+              <img src="../images/placeholder.jpg" class="related-tracks-img">
+            </td>
+            <td>
+              <h2 class="tracks-color" id="related-artist-name-6">Track name</h2>
+              <br>
+              <h3>artist</h3>
+            </td>
+          </tr>
+        </table>
+        <hr>
+      </div>
+      <div class="related-tracks" id="related-artist-7">
+        <table>
+          <tr>
+            <td>
+              <img src="../images/placeholder.jpg" class="related-tracks-img">
+            </td>
+            <td>
+              <h2 class="artists-color" id="related-artist-name-7">Track name</h2>
+              <br>
+              <h3>artist</h3>
+            </td>
+          </tr>
+        </table>
+        <hr>
+      </div>
+      <div class="related-tracks" id="related-artist-8">
+        <table>
+          <tr>
+            <td>
+              <img src="../images/placeholder.jpg" class="related-tracks-img">
+            </td>
+            <td>
+              <h2 class="tracks-color" id="related-artist-name-8">Track name</h2>
+              <br>
+              <h3>artist</h3>
+            </td>
+          </tr>
+        </table>
+        <hr>
+      </div>
+    </div>
+  </main>
+  <footer>
+  </footer>
   </body>
 </html>

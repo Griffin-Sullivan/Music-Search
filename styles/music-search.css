@@ -1,3 +1,89 @@
+* {
+  margin: 0px;
+  font-family: 'Comfortaa', cursive;
+}
+
+body {
+  background-color: #2D2D2D;
+}
+
+main {
+  display: absolute;
+  top: 50px;
+  display: grid;
+  grid-template-columns: 6.25% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 6.25%;
+  grid-template-rows: 50px 320px 50px 50px 50vh 50px;
+  grid-gap: 10px;
+  position: relative;
+  height: 90vh;
+}
+
+img {
+  border-radius: 15px;
+  box-shadow: 0px 10px 15px #111111;
+}
+
+h3 {
+  color: #e3e3e3;
+}
+
+h4 {
+  color: #e3e3e3;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin-top: 10px;
+}
+
+.grey-text {
+  color: #B1B1B1;
+}
+
+.tracks-color {
+  color: #E4FFC4;
+}
+
+.albums-color {
+  color: #C4FFE2;
+}
+
+.artists-color {
+  color: #C4CDFF;
+}
+
+.playlist-color {
+  color: #E8C4FF;
+}
+
+.podcast-color {
+  color: #FFC4C4;
+}
+
+.genre-color {
+  color: #FFDFC4;
+}
+
+
+/*---home page search---*/
+
+.inline-block {
+  display: inline-block;
+  width: 100%;
+  height: 100vh;
+  background-color: #222222;
+}
+
+#search-container {
+  height: 100vh;
+  width: 100%;
+
+  box-shadow: 0px 10px 15px #111111;
+}
+
 #search-body {
         -webkit-animation: color-change 8s infinite;
         -moz-animation: color-change 8s infinite;
@@ -52,46 +138,15 @@
       100% { color: #E4FFC4; }
   }
 
-
-* {
-  font-family: 'Comfortaa', cursive;
-  font-size: 18px;
-  background-color: #222222;
-  line-height: 33px;
-  text-align: center;
-}
-
-.grey-text {
-  color: #B1B1B1;
-}
-
-.tracks-color {
-  color: #E4FFC4;
-}
-
-.albums-color {
-  color: #C4FFE2;
-}
-
-.artists-color {
-  color: #C4CDFF;
-}
-
-.playlist-color {
-  color: #E8C4FF;
-}
-
-.podcast-color {
-  color: #FFC4C4;
-}
-
-.genre-color {
-  color: #FFDFC4;
-}
-
-
 #main-search {
   margin-top: 20%;
+}
+
+#about-us-container {
+  height: 100vh;
+  width: 100%;
+  padding: 10%;
+
 }
 
 #about-us-title {
@@ -119,13 +174,49 @@
   color: #9F9F9F;
 }
 
-#box {
+#home-search-input {
   border: none;
-  background-color: #9F9F9F;
+  background-color: #e3e3e3;
   border-radius: 20px;
+  height: 35px;
   width: 45%;
   color: #222222;
+  margin-top: 50px;
+  padding-left: 35px;
 }
+
+/*---Header---*/
+
+header {
+  display: flex;
+  flex-direction: row ;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  height: 75px;
+  width: 100%;
+  padding: 5px;
+  background-color: #222222;
+  z-index: 100;
+  box-shadow: 0px 10px 15px #111111;
+}
+
+.header-flex-item{
+  width: 50%;
+}
+
+#flex-item-1 {
+  padding-left: 25px;
+}
+
+#flex-item-2 {
+
+}
+
+
 
 /* --------------- Beginning of Navigation bar CSS --------------- */
 
@@ -133,28 +224,23 @@ nav {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: space-between;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-  background-color: black;
-  height: 80px;
+  justify-content: center;
+  width: auto;
+
 }
 
 #nav-items {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  
+
 }
 
 #nav-items , a {
-  margin-left: 30px;
-  margin-right: 30px;
-  background-color: black;
+  margin-left: 20px;
   text-decoration: none;
   color: #B1B1B1;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 #nav-items,a:nth-child(1):hover {
@@ -179,15 +265,39 @@ nav {
 
 #nav-items,a:nth-child(6):hover {
   color: #FFDFC4;
-  padding-right: 2.5%;
+  padding-right: 1%;
 }
 
 #nav-items,a:nth-child(6) {
-  padding-right: 2.5%;
+  padding-right: 1%;
+}
+
+#nav-items,a:nth-child(1).active {
+  color: #E4FFC4;
+}
+
+#nav-items,a:nth-child(2).active {
+  color: #C4FFE2;
+}
+
+#nav-items,a:nth-child(3).active {
+  color: #C4CDFF;
+}
+
+#nav-items,a:nth-child(4).active {
+  color: #E8C4FF;
+}
+
+#nav-items,a:nth-child(5).active {
+  color: #FFC4C4;
+}
+
+#nav-items,a:nth-child(6).active {
+  color: #FFDFC4;
 }
 
 #search-bar {
-  background-color: black;
+
 }
 
 #logo-home {
@@ -196,12 +306,127 @@ nav {
 }
 
 #search-box {
-  border-radius: 20px;
-  background-color: lightgray;
+  border-radius: 25px;
+  background-color: #e3e3e3;
+  border: none;
+  height: 25px;
+  width: 200px;
+  padding-left: 15px;
 }
 
-/* ------------ End of Navigation bar CSS ------------- */
+/*---Album Page---*/
 
-body {
-  margin: 0;
+.album-info {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 2;
+}
+
+.main-album-img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  margin: 20px;
+}
+
+.related-album-title {
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 1;
+  grid-row-end:  2;
+}
+
+.related-albums-container {
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 2;
+  grid-row-end:  6;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border-radius: 25px;
+}
+
+div.album-info table{
+  margin-bottom: 10px;
+}
+
+.related-album-img{
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  margin: 20px;
+}
+
+/*--Recent Searches--*/
+
+.recent-searches {
+  grid-column-start: 2;
+  grid-column-end:  5 ;
+  grid-row-start: 5;
+}
+
+.recent-searches-result {
+    margin-bottom: 20px;
+}
+
+.recent-searches-title {
+  grid-column-start: 2;
+  grid-column-end:  5 ;
+  grid-row-start: 4;
+}
+
+.recent-searches-img{
+  height: 150px;
+  width: 150px;
+}
+
+/*--Track Page--*/
+
+.track-info {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 2;
+}
+
+#related-tracks-container {
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 2;
+  grid-row-end: 6;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border-radius: 25px;
+}
+
+.related-tracks-img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  margin: 20px;
+}
+
+.related-tracks-title {
+  grid-column-start: 5;
+  grid-column-end: 7;
+  grid-row-start: 1;
+}
+
+/*--artist pages--*/
+
+.artists-page img {
+  border-radius: 300px;
+}
+
+/*-- Podcast Page--*/
+
+.main-podcast-img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+}
+
+.podcast-info {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 2;
 }
