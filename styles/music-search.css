@@ -52,11 +52,11 @@ li {
 }
 
 .artists-color {
-  color: #C4CDFF;
+  color: #E8C4FF;
 }
 
 .playlist-color {
-  color: #E8C4FF;
+  color: #FFDFC4;
 }
 
 .podcast-color {
@@ -64,7 +64,7 @@ li {
 }
 
 .genre-color {
-  color: #FFDFC4;
+  color: #C4CDFF;
 }
 
 
@@ -305,7 +305,7 @@ nav {
   color: #B1B1B1;
 }
 
-.search {
+#search-box {
   border-radius: 25px;
   background-color: #e3e3e3;
   border: none;
@@ -426,6 +426,19 @@ div.album-info table{
 }
 
 .podcast-info {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 2;
+}
+
+/*-- genres page --*/
+.main-genre-img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+}
+
+.genre-info {
   grid-column-start: 2;
   grid-column-end: 5;
   grid-row-start: 2;
