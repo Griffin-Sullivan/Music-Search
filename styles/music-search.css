@@ -57,7 +57,7 @@ li {
   color: #E8C4FF;
 }
 
-.playlist-color {
+.playlists-color {
   color: #FFDFC4;
 }
 
@@ -83,7 +83,7 @@ li {
   height: 100vh;
   width: 100%;
 
-  box-shadow: 0px 10px 15px #111111;
+  /*---box-shadow: 0px 10px 15px #111111;---*/
 }
 
 #search-body {
@@ -154,19 +154,24 @@ li {
 #about-us-title {
   font-size: 14px;
   position: absolute;
-  top: 125%;
+  top: 160%;
   align-items: center;
   justify-content: center;
   width: 100%;
+  color: #e6e6e6;
+  margin-left: 35%;
 }
 
 #about-us {
   font-size: 12px;
   position: absolute;
-  top: 150%;
+  top: 185%;
   align-items: center;
   justify-content: center;
   width: 100%;
+  color: #e6e6e6;
+  line-height: 22px;
+  margin-left: 30%;
 }
 
 #down-arrow-button {
@@ -446,6 +451,52 @@ div.album-info table{
   grid-row-start: 2;
 }
 
+
+/*---Playlist Page---*/
+
+.playlist-info {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 2;
+}
+
+.main-playlist-img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  margin: 20px;
+}
+
+.related-playlist-title {
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 1;
+  grid-row-end:  2;
+}
+
+.related-playlists-container {
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 2;
+  grid-row-end:  6;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border-radius: 25px;
+}
+
+div.playlist-info table{
+  margin-bottom: 10px;
+}
+
+.related-playlist-img{
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  margin: 20px;
+}
+
+
+
 /*-- scrollbar styling --*/
 
 
@@ -455,12 +506,12 @@ div.album-info table{
 
 
 ::-webkit-scrollbar-track {
-  background: #2D2D2D; 
+  background: #2D2D2D;
 }
- 
+
 
 ::-webkit-scrollbar-thumb {
-  background: #535353; 
+  background: #535353;
   border-radius: 5px;
 }
 
@@ -469,6 +520,7 @@ div.album-info table{
 }
 
 ::-webkit-scrollbar-thumb:hover {
+<<<<<<< HEAD
   background: #858585; 
 }
 
@@ -476,3 +528,7 @@ div.album-info table{
 input:focus {
   outline-width: 0;
 }
+=======
+  background: #858585;
+}
+>>>>>>> d050121d17e203ea12c06bfc0a7536a307c3d6fa
