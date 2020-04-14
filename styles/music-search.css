@@ -471,3 +471,8 @@ div.album-info table{
 ::-webkit-scrollbar-thumb:hover {
   background: #858585; 
 }
+
+/*-- removing blue borders on input --*/
+input:focus {
+  outline-width: 0;
+}
