@@ -515,12 +515,7 @@ div.playlist-info table{
   border-radius: 5px;
 }
 
-::-webkit-scrollbar-corner {
-  background: #2D2D2D
-}
-
 ::-webkit-scrollbar-thumb:hover {
-<<<<<<< HEAD
   background: #858585; 
 }
 
@@ -528,7 +523,3 @@ div.playlist-info table{
 input:focus {
   outline-width: 0;
 }
-=======
-  background: #858585;
-}
->>>>>>> d050121d17e203ea12c06bfc0a7536a307c3d6fa
