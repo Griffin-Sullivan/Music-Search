@@ -1,3 +1,5 @@
+// WARNING: FILE IS DEPRACTED. USE APPSERVER.JS TO CONTROL SERVER
+// --------------------------------------------------------------
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');

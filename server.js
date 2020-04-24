@@ -1,3 +1,6 @@
+// WARNING: FILE IS DEPRACTED. USE APPSERVER.JS TO CONTROL SERVER
+// --------------------------------------------------------------
+
 const express = require('express');
 const bodyParser = require('body-parser');
 
