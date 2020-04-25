@@ -24,9 +24,35 @@ if(search) {
                     $("#artist-name").text(data.artists.items[0].name);
                     $("#artist-followers").text("Followers: " + formatNumber(data.artists.items[0].followers.total));
                     $("#artist-genre").text("Genre: " + data.artists.items[0].genres[0]);
+
+                    var artistID = data.artists.items[0].id;
+
                     console.log(data);
+                    
+
+                    $.ajax({
+                        url: 'https://api.spotify.com/v1/artists/' + artistID + '/related-artists',
+                        type: 'GET',
+                        headers: {
+                            'Authorization' : 'Bearer ' + accessToken,
+                            "Accept": "application/json",
+                            "Content-Type": "application/json"
+                        },
+                        success: function(data) {
+                            console.log(data);
+                            for (var i = 1; i < 9; i++) {
+                                if (data.artists[i-1]) {
+                                    $('#related-image-' + i).attr("src", data.artists[i-1].images[0].url);
+                                    $('#related-artist-name-' + i).text(data.artists[i-1].name);
+                                    $('#related-followers-' + i).text("Followers: " + formatNumber(data.artists[i-1].followers.total));
+                                }
+                            }
+                            
+                        }
+                    });
                 }
             });
+            
             
          
             
