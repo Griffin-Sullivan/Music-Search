@@ -242,10 +242,10 @@ nav {
 }
 
 #nav-items , a {
-  margin-left: 20px;
+  margin-left: 25px;
   text-decoration: none;
   color: #B1B1B1;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 #nav-items,a:nth-child(1):hover {
