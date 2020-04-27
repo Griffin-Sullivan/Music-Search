@@ -3,10 +3,10 @@ const Recent = require('../recent.model.js');
 // Create and Save a new Note
 exports.create = (req, res) => {
 
-    // Create a Note
+    // Create a Recent Search
     const recent = new Recent({
         search: req.body.search, 
-        page: req.body.page
+        image: req.body.image
     });
 
     // Save Note in the database
@@ -58,7 +58,7 @@ exports.findOne = (req, res) => {
 exports.update = (req, res) => {
     Recent.findByIdAndUpdate(req.params.recentId, {
         search: req.body.search,
-        page: req.body.page
+        image: req.body.image
     }, {new: true})
     .then(recent => {
         if(!recent) {

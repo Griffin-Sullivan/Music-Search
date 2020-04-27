@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 
 const RecentSchema = mongoose.Schema({
     search: String,
-    page: String
+    image: String
 }, {
-    timestamps: true
+    timestamps: false
 });
 
 module.exports = mongoose.model('Recent', RecentSchema);

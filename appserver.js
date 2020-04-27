@@ -23,27 +23,21 @@ request.post(authOptions, function(error, response, body) {
 
     // use the access token to access the Spotify Web API
     var token = body.access_token;
-    var options = {
-      url: 'https://api.spotify.com/v1/users/jmperezperez',
-      headers: {
-        'Authorization': 'Bearer ' + token
-      },
-      json: true
-    };
-    // request.get(options, function(error, response, body) {
-    //   console.log(body);
-    // });
-    console.log(token);
+    fs.writeFile('token.txt', token, (err) => {
+      // throws an error, you could also catch it here
+      if (err) throw err;
+  
+      // success case, the file was saved
+      console.log('Token saved!');
+  });
 
-    fs.writeFile("./token.txt", token, (err) => {
-        if (err) {
-            console.error(err);
-            return;
-        };
-        console.log("File has been created");
-    });
   }
 });
+
+
+
+
+
 //code from app.js
 var express = require('express');
 var path = require('path');
@@ -63,6 +57,17 @@ app.use(express.static(path.join(__dirname, 'public'), {extensions:['html']}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+app.get('/access_token', function(req, res) {
+  fs.readFile('token.txt', 'utf8', function(err, data) {
+    if (err) throw err;
+    console.log(data)
+    res.send({
+    'access_token': data
+    });
+  });
+  
+});
 
 module.exports = app;
 //end of app.js

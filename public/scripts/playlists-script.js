@@ -1,4 +1,16 @@
-var accessToken = "";
+var accessToken;
+
+$(document).ready(function() {
+    $.ajax({
+        url: 'http://localhost:3000/access_token',
+        contentType: "application/json",
+        accepts: "application/json"
+    }).done(function(data) {
+            console.log(data);
+            accessToken = data.access_token;
+            });
+    loadRecentSearchesOnLoad();
+});
 
 
 var search = document.getElementById("search-box");
@@ -19,11 +31,13 @@ if(search) {
                    if (data.playlists.items[0].images[0].url) {
                         $("#playlist-img").attr("src", data.playlists.items[0].images[0].url);
                    }
+                   var playlistImg = data.playlists.items[0].images[0].url;
                     $("#playlist-name").text(data.playlists.items[0].name);
+                    var playlistName = data.playlists.items[0].name;
                     $("#playlist-maker").text("made by: " + data.playlists.items[0].owner.display_name);
                     $("#num-songs").text(data.playlists.items[0].tracks.total + " songs");
                     console.log(data);
-
+                   createRecent(playlistName, playlistImg);
                     var playlistID = data.playlists.items[0].id;
 
                     $.ajax({
@@ -43,20 +57,6 @@ if(search) {
                                     $('#release-year-' + i).text(data.tracks.items[i-1].track.album.release_date);
                                 }
                             }
-                            // for (var i = 7; i < data.tracks.items.length; i++) {
-                            //     var htmlBlock= '<div class="related-playlists" id="album-'+i+'">' +
-                            //     '<table>' +
-                            //     '<tr>' + 
-                            //     '<td><img src="../images/placeholder.jpg" class="related-album-img" id="track-img-'+i+'"></td>' +
-                            //     '<td> <ul>' +
-                            //     '<li><h2 class="playlists-color" id="track-name-'+i+'">playlist name</h2></li>' +
-                            //     '<li><h3 class="artist-lable" id="artist-name-'+i+'">playlist creator</li>' +
-                            //     '<li><h4 id="release-year-'+i+'">year</h3></li>' +
-                            //     '</td></tr></table><hr height="3px" width="95%"></div>';
-                                // var container = document.getElementsByClassName('.related-playlists-container')
-                                // container.write(htmlBlock);
-                            //     $("#album-" + i-1).after(htmlBlock);
-                            // }
 
                             console.log(data);
 
@@ -66,6 +66,89 @@ if(search) {
             });
             
          
+            
+        }
+    });
+}
+
+function createRecent(name, url) {
+    var data = {};
+    data.search = name;
+    data.image = url;
+    $.ajax({
+        type: "POST",
+        data: JSON.stringify(data),
+        contentType: 'application/json',
+        url: "http://localhost:3000/recent",
+        success: function(data) {
+            console.log("success");
+            loadRecentSearches();
+        }
+    })
+}
+
+function loadRecentSearches() {
+    $.ajax({
+        url: "http://localhost:3000/recent",
+        type: "GET",
+        success: function(data) {
+            console.log(data);
+            let totalLength = data.length - 2;
+            
+            if (data[totalLength]){
+                $("#recent-img-1").attr("src", data[totalLength].image);
+                $("#recent-search-1").text(data[totalLength].search); 
+      
+            }
+            if (data[totalLength - 1]){
+                $("#recent-img-2").attr("src", data[totalLength - 1].image);
+                $("#recent-search-2").text(data[totalLength - 1].search); 
+            }
+            if (data[totalLength - 2]){
+                $("#recent-img-3").attr("src", data[totalLength - 2].image);
+                $("#recent-search-3").text(data[totalLength - 2].search); 
+        
+            }
+            
+            
+        }
+    });
+}
+
+
+function deleteRecentSearch(id) {
+    $.ajax({
+        url: "http://localhost:3000/recent/" + id,
+        type: "DELETE",
+        success: function(data) {
+            console.log("successfully deleted " + id);
+        }
+    });
+}
+
+function loadRecentSearchesOnLoad() {
+    $.ajax({
+        url: "http://localhost:3000/recent",
+        type: "GET",
+        success: function(data) {
+            console.log(data);
+            let totalLength = data.length - 1;
+            
+            if (data[totalLength]){
+                $("#recent-img-1").attr("src", data[totalLength].image);
+                $("#recent-search-1").text(data[totalLength].search); 
+      
+            }
+            if (data[totalLength - 1]){
+                $("#recent-img-2").attr("src", data[totalLength - 1].image);
+                $("#recent-search-2").text(data[totalLength - 1].search); 
+            }
+            if (data[totalLength - 2]){
+                $("#recent-img-3").attr("src", data[totalLength - 2].image);
+                $("#recent-search-3").text(data[totalLength - 2].search); 
+        
+            }
+            
             
         }
     });

@@ -7,7 +7,30 @@
  * https://developer.spotify.com/web-api/authorization-guide/#authorization_code_flow
  */
 
-var express = require('express'); // Express web server framework
+ // WARNING: FILE IS DEPRACTED. USE APPSERVER.JS TO CONTROL SERVER
+// --------------------------------------------------------------
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+
+var app = express();
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public'), {extensions:['html']}));
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
+module.exports = app;
+
+ // Express web server framework
 var request = require('request'); // "Request" library
 var cors = require('cors');
 var querystring = require('querystring');
@@ -34,7 +57,6 @@ var generateRandomString = function(length) {
 
 var stateKey = 'spotify_auth_state';
 
-var app = express();
 
 app.use(express.static(__dirname + '/authorization_code/public'))
    .use(cors())
@@ -143,6 +165,7 @@ app.get('/refresh_token', function(req, res) {
     }
   });
 });
+
 
 
 console.log('Listening on 8888');
