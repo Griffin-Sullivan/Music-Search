@@ -79,20 +79,38 @@ if(search) {
     });
 }
 
-function createRecent(name, url) {
-    var data = {};
-    data.search = name;
-    data.image = url;
+function createRecent(name, picture) {
     $.ajax({
-        type: "POST",
-        data: JSON.stringify(data),
-        contentType: 'application/json',
         url: "http://localhost:3000/recent",
+        type: "GET",
         success: function(data) {
-            console.log("success");
-            loadRecentSearches();
+            var isRepeat = false;
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].search === name && data[i].image === picture) {
+                    isRepeat = true;
+                    console.log(isRepeat);
+                }
+            }
+
+            if (!isRepeat) {
+                console.log("false");
+                var data = {};
+                data.search = name;
+                data.image = picture;
+                $.ajax({
+                    type: "POST",
+                    data: JSON.stringify(data),
+                    contentType: 'application/json',
+                    url: "http://localhost:3000/recent",
+                    success: function(data) {
+                        console.log("success");
+                        loadRecentSearches();
+                    }
+                });
+            }
         }
-    })
+    });
+    
 }
 
 function loadRecentSearches() {
